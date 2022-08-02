@@ -65,7 +65,7 @@ app.MapPost("login", ([FromBody] UserPostModel model) =>
 
     return Results.Ok( new
     {
-        user = user,
+        user = new { username = user.Username, role = user.Role.ToString() },
         token = token
     });
 })
